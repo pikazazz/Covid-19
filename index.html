@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<title>COVID-19 CS-RMUTT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
+
+<body class="w3-light-grey">
+
+    <header class="w3-container" style="padding-top:22px">
+        <h5><b><i class="fa fa-dashboard"></i> Dashboard</b></h5>
+        <p id="date"></p>
+    </header>
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-quarter">
+            <div class="w3-container w3-red w3-padding-16">
+                <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                    <h3>
+                        <p id="cases"></p>
+                    </h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>ผู้ติดเชื้อ</h4>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-container w3-blue w3-padding-16">
+                <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                    <h3>
+                        <p id="active"></p>
+                    </h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>กำลังรักษา</h4>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-container w3-teal w3-padding-16">
+                <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                    <h3>
+                        <p id="recovered"></p>
+                    </h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>หายแล้ว</h4>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-container w3-orange w3-text-white w3-padding-16">
+                <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                    <h3>
+                        <p id="deaths"></p>
+                    </h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>เสียชีวิต</h4>
+            </div>
+        </div>
+    </div>
+    <div class="w3-panel">
+        <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-third">
+                <h5>THAILAND</h5>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand.svg" style="width:100%"
+                    alt="Google Regional Map">
+            </div>
+            <div class="w3-twothird">
+                <h5>Feeds</h5>
+                <table class="w3-table w3-striped w3-white">
+                    <tr>
+                        <td><i class="fa fa-user w3-text-blue w3-large"></i></td>
+                        <td>ประเทศ</td>
+                        <td>
+                            <p id="country"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
+                        <td>ผู้ติดเชื้อทั้งหมด</td>
+                        <td>
+                            <p id="casess"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
+                        <td>ผู้ติดเชื้อที่พบวันนี้</td>
+                        <td>
+                            <p id="todayCases"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
+                        <td>ผู้เสียชีวิต</td>
+                        <td>
+                            <p id="deathss"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-bookmark w3-text-blue w3-large"></i></td>
+                        <td>ผู้เสียชีวิตวันนี้</td>
+                        <td>
+                            <p id="todayDeaths"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
+                        <td>รักษาหายแล้ว</td>
+                        <td>
+                            <p id="recovereds"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
+                        <td>กำลังรักษา</td>
+                        <td>
+                            <p id="actives"></p>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-16 w3-light-grey">
+        <hr>
+        </hr>
+        <p>Powered by COMPUTER SCIENCE RMUTT</p>
+    </footer>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+<script>
+    var URL = document.URL;
+    var countries  = URL.substring(29);
+    const url = 'https://coronavirus-19-api.herokuapp.com/countries/'+countries;
+    $(document).ready(async () => {
+        var d = Date(Date.now());
+        const date = d.toString();
+        const data = await init();
+        const country = data.country;
+        const cases = data.cases;
+        const todayCases = data.todayCases;
+        const deaths = data.deaths;
+        const todayDeaths = data.todayDeaths;
+        const recovered = data.recovered;
+        const active = data.active;
+        const critical = data.critical;
+        const casesPerOneMillion = data.casesPerOneMillion;
+        document.getElementById("date").innerHTML = date;
+        document.getElementById("cases").innerHTML = cases;
+        document.getElementById("casess").innerHTML = cases;
+        document.getElementById("recovered").innerHTML = recovered;
+        document.getElementById("recovereds").innerHTML = recovered;
+        document.getElementById("active").innerHTML = active;
+        document.getElementById("deaths").innerHTML = deaths;
+        document.getElementById("deathss").innerHTML = deaths;
+        document.getElementById("todayCases").innerHTML = todayCases;
+        document.getElementById("todayDeaths").innerHTML = todayDeaths;
+        document.getElementById("actives").innerHTML = active;
+        document.getElementById("country").innerHTML = country;
+
+    })
+    async function init() {
+        let response = await fetch(url);
+        if (response.ok) {
+            return await response.json();
+        } else {
+            return await response.status;
+        }
+    }
+</script>
+<style>
+    html,
+    body {
+        height: 100%;
+        background-color: #cfcfcf;
+    }
+
+    .box-1 {
+        background-color: #df0ee6;
+        margin: 16px;
+        padding: 15px;
+        height: 200px;
+        width: 100%;
+        color: white;
+    }
+
+    .box-2 {
+        color: white;
+        background-color: #1833cf;
+        margin: 16px;
+        padding: 15px;
+        height: 200px;
+        width: 100%;
+    }
+
+    .box-3 {
+        color: white;
+        background-color: #9817b8;
+        margin: 16px;
+        padding: 15px;
+        height: 200px;
+        width: 100%;
+    }
+
+    .box-4 {
+        color: white;
+        background-color: #d62a2a;
+        margin: 16px;
+        padding: 15px;
+        height: 200px;
+        width: 100%;
+
+    }
+</style>
+
+</html>
